@@ -47,6 +47,12 @@
     </navigator>
   </view>
 
+  <view class="uploader">
+    <navigator url="../test/test" open-type="navigate" class="uploader-text">
+      <text>test</text>
+    </navigator>
+  </view>
+
   <!--test-->
   <view class="uploader">
     <view class="list-item" bindtap="testMyfunction">
