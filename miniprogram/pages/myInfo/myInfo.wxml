@@ -1,0 +1,9 @@
+<!--pages/myInfo/myInfo.wxml-->
+<view class='font'>
+  <view class='bg'>
+    <image class='userTx' src='{{userTx || defaultUrl}}'></image>
+    <button open-type='getUserInfo' bindgetuserinfo='getUserInfoHandler'></button>
+    <text class='{{ username == "点击登录" ? "usernameDe":"username"}} '>{{username}}</text>
+  </view>
+
+</view>
