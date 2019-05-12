@@ -1,0 +1,13 @@
+.Image{
+  height: 300rpx;
+  width: 300rpx;
+  margin-top: 30px;
+}
+
+.Page{
+  text-align: center;
+}
+
+.Map{
+  text-align: center;
+}

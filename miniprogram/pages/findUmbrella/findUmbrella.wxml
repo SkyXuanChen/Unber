@@ -1,0 +1,19 @@
+<page>
+
+  <view class="Page">
+
+    <view class='Map'>
+      <map longitude="{{longitude}}" latitude="{{latitude}}" markers="{{markers}}" covers="{{covers}}" show-location style="width: 100%;">
+      </map>
+      <text>我的位置：({{longitude}},{{latitude}}) 
+      </text>
+    </view>
+
+    <view class='page_bd'>
+      <button class="weui-btn" type="default" bindtap='openToast'>
+        <image class='Image' src='../../images/yuan.png'></image>
+      </button>
+    </view>
+  </view>
+
+</page>
