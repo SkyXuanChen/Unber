@@ -14,7 +14,9 @@
     "pages/openapi/cloudid/cloudid",
     "pages/test/test",
     "pages/findUmbrella/findUmbrella",
-    "pages/haveUmbrella/haveUmbrella"
+    "pages/haveUmbrella/haveUmbrella",
+    "pages/newRequest/newRequest",
+    "pages/newRequest/choosePosition/choosePosition"
   ],
   "permission":{
     "scope.userLocation":{

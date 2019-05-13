@@ -1,0 +1,21 @@
+<!--pages/newRequest/newRequest.wxml-->
+
+<form bindsubmit='formSubmit'>
+    <view class="weui-cell weui-cell_input weui-cell_vcode">
+        <view class="weui-cell__hd">
+            <view class="weui-label">我的位置</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input name='activity_location' class="weui-input" placeholder="点击获取位置" value='{{activity_location}}' disabled='true' />
+        </view>
+        <view class="weui-cell__ft">
+            <view class="weui-vcode-btn" bindtap="getLocation">获取位置</view>
+        </view>
+    </view>
+ 
+    <view class="weui-btn-area">
+        <button class="weui-btn btn-green" form-type='submit'>确定</button>
+    </view>
+</form>
+
+

@@ -1,5 +1,12 @@
 //app.js
 App({
+
+  data: {
+    activity_lat: "",
+    activity_lng:"",
+    activity_location:""
+  },
+
   onLaunch: function () {
     
     if (!wx.cloud) {

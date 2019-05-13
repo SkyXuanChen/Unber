@@ -1,4 +1,5 @@
 // pages/findUmbrella/findUmbrella.js
+
 Page({
 
   /**
@@ -94,6 +95,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  openNewRequest:function(){
+    wx.navigateTo({
+      url: '/pages/newRequest/newRequest',
+    })
   },
 
   openToast: function () {
