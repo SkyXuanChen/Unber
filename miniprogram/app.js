@@ -4,7 +4,8 @@ App({
   data: {
     activity_lat: "",
     activity_lng:"",
-    activity_location:""
+    activity_location:"",
+    waitingUmbrella:false
   },
 
   onLaunch: function () {

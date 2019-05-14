@@ -11,8 +11,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    activity_location: "",
-    address: ""
+    //activity_location: "",
+    address: "",
+    openid: "",
+    longitude: 116.4965075,
+    latitude: 40.006103,
   },
 
   /**
@@ -20,6 +23,11 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    if (app.globalData.openid) {
+      this.setData({
+        openid: app.globalData.openid
+      })
+    }
     if (options.address != null && options.address != '') {
       //设置变量 address 的值
       this.setData({
@@ -35,8 +43,8 @@ Page({
         success: function (res) {
           // console.log(res.result.address);
           that.setData({
-            // address: res.result.address,
-            activity_location: res.result.address
+             address: res.result.address,
+            //activity_location: res.result.address
           });
           // console.log(that.data.address);
         },
@@ -68,7 +76,8 @@ Page({
     var that = this;
     if (location != "") {
       that.setData({
-        activity_location: location
+        //activity_location: location
+        address:location
       });
     }
   },
@@ -115,10 +124,42 @@ Page({
   },
 
   formSubmit: function (e) {
-    wx.showToast({
-      title: '现在还不能跳转噢',
-      icon: 'success',
-      duration: 3000
-    });
+    // wx.showToast({
+    //   title: '现在还不能跳转噢',
+    //   icon: 'success',
+    //   duration: 3000
+    // });
+
+    getApp().data.waitingUmbrella=true;
+    const db = wx.cloud.database()
+    db.collection('waitings').add({
+      data: {
+        address:this.data.address,
+        longitude:this.data.longitude,
+        latitude:this.data.latitude,
+        //_openid: this.openid
+      },
+      success: res => {
+        // 在返回结果中会包含新创建的记录的 _id
+        this.setData({
+          counterId: res._id,
+        })
+        wx.showToast({
+          title: '发起请求成功',
+        })
+        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+      },
+      fail: err => {
+        wx.showToast({
+          icon: 'none',
+          title: '发起请求失败'
+        })
+        console.error('[数据库] [新增记录] 失败：', err)
+      }
+    })
+    wx.navigateTo({
+      url: '/pages/newRequest/waitingUmbrella/waitingUmbrella',
+    })
   }
 })
+

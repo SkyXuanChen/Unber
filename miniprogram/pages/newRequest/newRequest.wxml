@@ -6,7 +6,7 @@
             <view class="weui-label">我的位置</view>
         </view>
         <view class="weui-cell__bd">
-            <input name='activity_location' class="weui-input" placeholder="点击获取位置" value='{{activity_location}}' disabled='true' />
+            <input name='address' class="weui-input" placeholder="点击获取位置" value='{{address}}' disabled='true' />
         </view>
         <view class="weui-cell__ft">
             <view class="weui-vcode-btn" bindtap="getLocation">获取位置</view>
@@ -14,7 +14,7 @@
     </view>
  
     <view class="weui-btn-area">
-        <button class="weui-btn btn-green" form-type='submit'>确定</button>
+        <button class="weui-btn btn-green" form-type='submit'>确认叫伞</button>
     </view>
 </form>
 
