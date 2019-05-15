@@ -1,0 +1,23 @@
+/* pages/myinfo/myinfo.wxss */
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #6a005f;
+  height: 280rpx;
+}
+.userinfo-avatar {
+  width: 150rpx;
+  height: 150rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+.userinfo-nickname {
+  color: #fff;
+  background:  #6a005f;
+  font-size: 50rpx;
+}
+
+.weui-panel{
+  width:100%;
+}
