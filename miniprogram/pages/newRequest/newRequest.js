@@ -74,12 +74,14 @@ Page({
     console.log("hi")
     //console.log(getApp().data.activity_location);//从position跳转过来，可以
     // console.log(this.data.address);
-    location = getApp().data.activity_location;
+    location = app.data.activity_location;
     var that = this;
     if (location != "") {
       that.setData({
         //activity_location: location
-        address:location
+        address:location,
+        longitude:app.data.activity_lng,
+        latitude:app.data.activity_lat
       });
     }
   },
@@ -132,7 +134,7 @@ Page({
     //   duration: 3000
     // });
 
-    getApp().data.waitingUmbrella=true;
+    app.data.waitingUmbrella=true;
     const db = wx.cloud.database()
     db.collection('waitings').add({
       data: {
@@ -144,9 +146,7 @@ Page({
       },
       success: res => {
         // 在返回结果中会包含新创建的记录的 _id
-        this.setData({
-          counterId: res._id,
-        })
+        app.data.orderid=res._id
         wx.showToast({
           title: '发起请求成功',
         })
