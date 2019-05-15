@@ -1,2 +1,8 @@
 <!--pages/newRequest/waitingUmbrella/waitingUmbrella.wxml-->
-<text>pages/newRequest/waitingUmbrella/waitingUmbrella.wxml</text>
+<text>已经等待：</text>
+<view>{{time}}</view>
+<view class="weui-btn-area">
+  <button class="weui-btn button-hover"type="default"role="button"aria-disabled="false" bindtap='cancelOrder'>
+    取消订单
+  </button>
+</view>

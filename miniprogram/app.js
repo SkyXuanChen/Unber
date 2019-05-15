@@ -5,7 +5,8 @@ App({
     activity_lat: "",
     activity_lng:"",
     activity_location:"",
-    waitingUmbrella:false
+    waitingUmbrella:false,
+    orderid:""
   },
 
   onLaunch: function () {
