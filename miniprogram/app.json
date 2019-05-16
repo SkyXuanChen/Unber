@@ -1,8 +1,12 @@
 {
   "pages": [
+<<<<<<< HEAD
     
+=======
+>>>>>>> 14dc080ddc0d703e6a78a67b04b613f69a650325
     "pages/mine/mine",
     "pages/mine/myInfo/myInfo",
+    "pages/matching/usersinfo",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
@@ -17,6 +21,7 @@
     "pages/test/test",
     "pages/findUmbrella/findUmbrella",
     "pages/haveUmbrella/haveUmbrella",
+    "pages/waitingList/waitingList",
     "pages/newRequest/newRequest",
     "pages/newRequest/choosePosition/choosePosition",
     "pages/newRequest/waitingUmbrella/waitingUmbrella",
