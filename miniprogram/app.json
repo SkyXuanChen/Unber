@@ -16,6 +16,7 @@
     "pages/test/test",
     "pages/findUmbrella/findUmbrella",
     "pages/haveUmbrella/haveUmbrella",
+    "pages/waitingList/waitingList",
     "pages/newRequest/newRequest",
     "pages/newRequest/choosePosition/choosePosition",
     "pages/newRequest/waitingUmbrella/waitingUmbrella"
