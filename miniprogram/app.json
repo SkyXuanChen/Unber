@@ -2,6 +2,7 @@
   "pages": [
     "pages/matching/usersinfo",
     "pages/mine/mine",
+    "pages/mine/myInfo/myInfo",
     "pages/index/index",
     "pages/userConsole/userConsole",
     "pages/storageConsole/storageConsole",
