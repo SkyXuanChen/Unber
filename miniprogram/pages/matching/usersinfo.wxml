@@ -1,0 +1,33 @@
+<!--pages/matching/usersinfo.wxml-->
+<view class="page">
+  <view class="page__bd">
+    <view class="weui-cells__title">快快联系ta</view>
+    <view class="weui-cells weui-cells_after-title">
+      <view class="weui-cell">
+        <view class="weui-cell__hd" style="position: relative;margin-right: 10px;">
+          <image src=".../touxiang.jpg" style="width: 50px; height: 50px; display: block" />
+          <!--此处获取微信头像作图片-->
+        </view>
+        <view class="weui-cell__bd">
+          <view>姓名{{user_name}}</view>
+          <view style="font-size: 13px;color: #888888;">联系电话：{{user_tel}}</view>
+          <!--此处加一个电话按钮，直接访问电话,或加一个复制按钮，直接复制电话-->
+        </view>
+      </view>
+       <view class="weui-panel">
+            <view class="weui-panel__hd">出发地：{{starting}}</view>
+            <view class="weui-panel__hd">目的地：{{destination}}</view>
+            <view class="weui-panel__bd">
+                <view class="weui-media-box weui-media-box_text">
+                    <view class="weui-media-box__desc">自我介绍，没有则暂无{{self_intro}}</view>
+                    <view class="weui-media-box__info">
+                        <view class="weui-media-box__info__meta">性别：{{sex}}</view>
+                        <view class="weui-media-box__info__meta">专业:{{major}}</view>
+                        <view class="weui-media-box__info__meta weui-media-box__info__meta_extra">微信号：{{wx_id}}<!--没有则暂无，或者用户设置里面关闭在此处显示微信号--></view>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+  </view>
+</view>

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/matching/usersinfo",
     "pages/mine/mine",
     "pages/index/index",
     "pages/userConsole/userConsole",
