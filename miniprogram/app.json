@@ -1,6 +1,5 @@
 {
   "pages": [
-    "pages/matching/usersinfo",
     "pages/mine/mine",
     "pages/mine/myInfo/myInfo",
     "pages/index/index",
@@ -19,7 +18,8 @@
     "pages/haveUmbrella/haveUmbrella",
     "pages/newRequest/newRequest",
     "pages/newRequest/choosePosition/choosePosition",
-    "pages/newRequest/waitingUmbrella/waitingUmbrella"
+    "pages/newRequest/waitingUmbrella/waitingUmbrella",
+    "pages/matching/usersinfo"
   ],
   "permission":{
     "scope.userLocation":{
