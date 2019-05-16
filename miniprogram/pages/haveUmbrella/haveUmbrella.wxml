@@ -1,2 +1,10 @@
 <!--pages/haveUmbrella/haveUmbrella.wxml-->
-<text>pages/haveUmbrella/haveUmbrella.wxml</text>
+<view class="page">
+        <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" bindregionchange="regionchange" show-location style="width: 100%; height: 250px;">
+</map>
+<text>您周围有XX位正在求伞</text>
+
+          <button class="weui-btn" type="default" bindtap='openList'>
+          <image class='Image' src='../../images/lanjing.PNG'></image>
+          </button>
+</view>

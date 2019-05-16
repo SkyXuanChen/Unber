@@ -1,1 +1,25 @@
 /* pages/haveUmbrella/haveUmbrella.wxss */
+.green-btn{
+background-color: #5cadff;
+color:#fff;
+}
+.green-hover-class{
+background-color: #2d8cf0;
+color:#fff;
+}
+.button-sp-area{
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center;
+  width:90%;
+}
+.Image{
+  height: 300rpx;
+  width: 300rpx;
+  margin-top: 30px;
+}
+
+.Page{
+  text-align: center;
+}
