@@ -11,6 +11,8 @@ Page({
     ],
     name: "",
     tel: "",
+    major: "",
+    wx_id: "",
     disabled: false
   },
 
@@ -80,7 +82,9 @@ Page({
         self.setData({
           radioItems: radioItems,
           name: res.result.data[0].name,
-          tel: res.result.data[0].tel
+          tel: res.result.data[0].tel,
+          major: res.result.data[0].major,
+          wx_id: res.result.data[0].wx_id
         });
         console.log(self.data)
       }
