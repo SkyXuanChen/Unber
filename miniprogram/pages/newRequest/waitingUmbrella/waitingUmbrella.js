@@ -103,20 +103,16 @@ Page({
   },
 
   cancelOrder: function(){
-    console.log("laile")
     console.log(app.data)
     app.data.waitingUmbrella = false;
     const db = wx.cloud.database()
     db.collection('waitings').doc(app.data.orderid).remove({
       success(res) {
-        console.log(res.data)
+        app.data.orderid = ""
       }
     })
-    app.data.orderid=""
-
-    wx.navigateTo({
-      url: '/pages/findUmbrella/findUmbrella',
+    wx.switchTab({
+      url: '../../findUmbrella/findUmbrella',
     })
   }
-
 })
