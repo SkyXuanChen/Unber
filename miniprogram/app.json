@@ -19,8 +19,7 @@
     "pages/haveUmbrella/haveUmbrella",
     "pages/newRequest/newRequest",
     "pages/newRequest/choosePosition/choosePosition",
-    "pages/newRequest/waitingUmbrella/waitingUmbrella",
-    "pages/matching/usersinfo"
+    "pages/newRequest/waitingUmbrella/waitingUmbrella"
   ],
   "permission":{
     "scope.userLocation":{
