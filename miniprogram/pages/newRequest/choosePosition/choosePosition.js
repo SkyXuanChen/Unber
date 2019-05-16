@@ -92,7 +92,6 @@ Page({
         wx.navigateBack({
           delta: 1
         });
-        console.log("dd")
         console.log(getApp().data.activity_location);
         // }
         //选择地点之后返回到原来页面
@@ -102,6 +101,9 @@ Page({
       },
       fail: function (err) {
         console.log(err)
+        wx.navigateBack({
+          delta: 1
+        });
       }
     });
   }
