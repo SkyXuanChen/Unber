@@ -48,7 +48,7 @@
       {
         "pagePath": "pages/haveUmbrella/haveUmbrella",
         "iconPath": "images/umbrella.png",
-        "selectedIconPath": "images/rainy.png",
+        "selectedIconPath": "images/umbrella.png",
         "text": "我有伞"
       },
       {
