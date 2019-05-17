@@ -16,9 +16,9 @@ Page({
     openid: "",
     longitude: 116.4965075,
     latitude: 40.006103,
-    destiny:"",
-    suggestion:[],
-    disable:false,
+    destiny: "",
+    suggestion: [],
+    disable: false,
   },
 
   /**
@@ -36,7 +36,7 @@ Page({
       this.setData({
         address: options.address
       });
-    }else{
+    } else {
       qqmapsdk = new QQMapWX({
         key: 'JQXBZ-ZJQWF-L2AJE-J5T5H-UXXZ3-CDFN6'
       });
@@ -46,7 +46,7 @@ Page({
         success: function (res) {
           // console.log(res.result.address);
           that.setData({
-             address: res.result.address,
+            address: res.result.address,
             //activity_location: res.result.address
           });
           // console.log(that.data.address);
@@ -80,9 +80,9 @@ Page({
     if (location != "") {
       that.setData({
         //activity_location: location
-        address:location,
-        longitude:app.data.activity_lng,
-        latitude:app.data.activity_lat
+        address: location,
+        longitude: app.data.activity_lng,
+        latitude: app.data.activity_lat
       });
     }
   },
@@ -134,39 +134,51 @@ Page({
     //   icon: 'success',
     //   duration: 3000
     // });
-    var _this=this;
-    _this.setData({ //设置suggestion属性，将关键词搜索结果以列表形式展示
-      disable:true
-    });
-    app.data.waitingUmbrella=true;
-    const db = wx.cloud.database()
-    db.collection('waitings').add({
-      data: {
-        address:this.data.address,
-        longitude:this.data.longitude,
-        latitude:this.data.latitude,
-        destiny:this.data.destiny,
-        //_openid: this.openid
-      },
-      success: res => {
-        // 在返回结果中会包含新创建的记录的 _id
-        app.data.orderid=res._id
-        wx.showToast({
-          title: '发起请求成功',
-        })
-        console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
-      },
-      fail: err => {
-        wx.showToast({
-          icon: 'none',
-          title: '发起请求失败'
-        })
-        console.error('[数据库] [新增记录] 失败：', err)
-      }
-    })
-    wx.navigateTo({
-      url: '/pages/newRequest/waitingUmbrella/waitingUmbrella',
-    })
+    if (this.data.destiny == "") {
+      this.setData({
+        showTopTips: true
+      });
+      setTimeout(function () {
+        that.setData({
+          showTopTips: false
+        });
+      }, 3000);
+    }
+    else {
+      var _this = this;
+      _this.setData({ //设置suggestion属性，将关键词搜索结果以列表形式展示
+        disable: true
+      });
+      app.data.waitingUmbrella = true;
+      const db = wx.cloud.database()
+      db.collection('waitings').add({
+        data: {
+          address: this.data.address,
+          longitude: this.data.longitude,
+          latitude: this.data.latitude,
+          destiny: this.data.destiny,
+          //_openid: this.openid
+        },
+        success: res => {
+          // 在返回结果中会包含新创建的记录的 _id
+          app.data.orderid = res._id
+          wx.showToast({
+            title: '发起请求成功',
+          })
+          console.log('[数据库] [新增记录] 成功，记录 _id: ', res._id)
+        },
+        fail: err => {
+          wx.showToast({
+            icon: 'none',
+            title: '发起请求失败'
+          })
+          console.error('[数据库] [新增记录] 失败：', err)
+        }
+      })
+      wx.navigateTo({
+        url: '/pages/newRequest/waitingUmbrella/waitingUmbrella',
+      })
+    }
   },
 
   //数据回填方法
@@ -176,7 +188,7 @@ Page({
       if (i == id) {
         this.setData({
           destiny: this.data.suggestion[i].title,
-          suggestion:[]
+          suggestion: []
         });
       }
     }

@@ -1,41 +1,45 @@
 <!--pages/newRequest/newRequest.wxml-->
-
-<form bindsubmit='formSubmit'>
-    <view class="weui-cell weui-cell_input weui-cell_vcode">
-        <view class="weui-cell__hd">
+<view class="page">
+  <view class="page__bd">
+      <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">目的地不能为空</view>
+    <form bindsubmit='formSubmit'>
+      <view class="weui-cells weui-cells_after-title">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
             <view class="weui-label">我的位置</view>
-        </view>
-        <view class="weui-cell__bd">
+          </view>
+          <view class="weui-cell__bd">
             <input name='address' class="weui-input" placeholder="点击获取位置" value='{{address}}' disabled='true' />
-        </view>
-        <view class="weui-cell__ft">
+          </view>
+          <view class="weui-cell__ft">
             <view class="weui-vcode-btn" bindtap="getLocation">获取位置</view>
+          </view>
         </view>
-    </view>
-    <view class="weui-cell weui-cell_input weui-cell_vcode">
-        <view class="weui-cell__hd">
+        <view class="weui-cell weui-cell_input weui-cell_vcode">
+          <view class="weui-cell__hd">
             <view class="weui-label">目的地</view>
-        </view>
-        <view class="weui-cell__bd">
+          </view>
+          <view class="weui-cell__bd">
             <!--绑定输入事件-->
-            <input bindinput="getsuggest" value="{{destiny}}"></input>
+            <input class="weui-input" placeholder="请输入目的地" bindinput="getsuggest" value="{{destiny}}"></input>
             <!--关键词输入提示列表渲染-->
             <view wx:for="{{suggestion}}" wx:key="index">
-                <!--绑定回填事件-->
-                <view>
+              <!--绑定回填事件-->
+              <view>
                 <!--根据需求渲染相应数据-->
                 <!--渲染地址title-->
                 <view style="text-align:center;" bindtap="backfill" id="{{index}}">{{item.title}}</view>
                 <!--渲染详细地址-->
                 <view style="font-size:12px;color:#666;text-align:center;">{{item.addr}}</view>
-                </view>
+              </view>
             </view>
+          </view>
         </view>
-    </view>
- 
-    <view class="weui-btn-area">
-        <button class="weui-btn btn-green" form-type='submit' disabled="{{disable}}">确认叫伞</button>
-    </view>
-</form>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn btn-green" form-type='submit' type="primary" disabled="{{disable}}">确认叫伞</button>
+      </view>
 
-
+    </form>
+  </view>
+</view>
