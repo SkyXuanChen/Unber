@@ -34,7 +34,7 @@
     </view>
  
     <view class="weui-btn-area">
-        <button class="weui-btn btn-green" form-type='submit'>确认叫伞</button>
+        <button class="weui-btn btn-green" form-type='submit' disabled="{{disable}}">确认叫伞</button>
     </view>
 </form>
 

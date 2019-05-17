@@ -18,6 +18,7 @@ Page({
     latitude: 40.006103,
     destiny:"",
     suggestion:[],
+    disable:false,
   },
 
   /**
@@ -133,7 +134,10 @@ Page({
     //   icon: 'success',
     //   duration: 3000
     // });
-
+    var _this=this;
+    _this.setData({ //设置suggestion属性，将关键词搜索结果以列表形式展示
+      disable:true
+    });
     app.data.waitingUmbrella=true;
     const db = wx.cloud.database()
     db.collection('waitings').add({
