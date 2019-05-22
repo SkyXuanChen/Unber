@@ -6,6 +6,7 @@ App({
     activity_lng:"",
     activity_location:"",
     waitingUmbrella:false,
+    have_matchUmbrella:false,
     orderid:""
   },
 

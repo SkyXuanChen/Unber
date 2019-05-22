@@ -12,7 +12,7 @@
     <block wx:for="{{listData}}" wx:key="k" wx:for-list_id="id" bindtap="onNamepiece">
       <view class="bus-list-item">
         <view class="bus-time">{{item.id}}</view>
-        <view class="tobooking" id="{{item.id}}" bindtap="onMatch"> 匹配 </view>
+        <view class="tobooking" id="{{item._id}}" bindtap="onMatch"> 匹配 </view>
         <view class="detail">
           <view class="detail1">
             <view class="start">
